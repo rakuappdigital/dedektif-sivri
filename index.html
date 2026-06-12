@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dedektif Sivri: Tavuk Döner Vakası</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- BAŞLIK EKRANI -->
+  <div id="screen-title" class="screen active">
+    <div class="title-panel">
+      <div class="comic-border title-box">
+        <div class="halftone"></div>
+        <h1>DEDEKTİF<br/><span class="red">SİVRİ</span></h1>
+        <p class="subtitle">TAVUK DÖNER VAKASI</p>
+        <p class="tagline">— İstanbul'un en zeki dedektifi mi? Belki. En sinir bozucu olanı? Kesinlikle. —</p>
+        <button class="btn-comic" onclick="Game.start()">VAKAYA GİR ▶</button>
+      </div>
+      <div class="credits">
+        <p>İlham: Dedektif Sivri: 1001 Lezzet (2001)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OYUN EKRANI -->
+  <div id="screen-game" class="screen">
+    <div class="game-layout">
+
+      <!-- SOL: SAHNE -->
+      <div class="scene-panel">
+        <div id="scene-title-bar" class="scene-title-bar">
+          <span id="scene-name">???</span>
+        </div>
+        <div id="scene-art" class="scene-art"></div>
+        <div id="scene-objects" class="scene-objects"></div>
+        <div id="scene-description" class="scene-description">
+          <p id="desc-text"></p>
+        </div>
+      </div>
+
+      <!-- SAĞ: UI -->
+      <div class="ui-panel">
+
+        <!-- DİYALOG KUTUSU -->
+        <div id="dialog-box" class="comic-border dialog-box hidden">
+          <div id="dialog-speaker" class="dialog-speaker"></div>
+          <div id="dialog-text" class="dialog-text"></div>
+          <div id="dialog-choices" class="dialog-choices"></div>
+          <button id="dialog-next" class="btn-small" onclick="Game.nextDialog()">DEVAM ▶</button>
+        </div>
+
+        <!-- ENVANTER -->
+        <div class="comic-border inventory-box">
+          <div class="box-title">ÇANTAM</div>
+          <div id="inventory-slots" class="inventory-slots">
+            <p class="empty-inv">— boş —</p>
+          </div>
+        </div>
+
+        <!-- NOT DEFTERİ -->
+        <div class="comic-border notes-box">
+          <div class="box-title">NOTLARIM</div>
+          <ul id="notes-list">
+            <li class="empty-inv">— henüz bir şey yok —</li>
+          </ul>
+        </div>
+
+        <!-- KARAKTERLER -->
+        <div class="comic-border chars-box">
+          <div class="box-title">ŞÜPHELILER</div>
+          <div id="chars-list" class="chars-list"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ALT: SAHNE GEÇİŞ BUTONLARI -->
+    <div id="nav-bar" class="nav-bar"></div>
+  </div>
+
+  <!-- BİTİŞ EKRANI -->
+  <div id="screen-end" class="screen">
+    <div class="comic-border end-box">
+      <div id="end-title" class="end-title"></div>
+      <div id="end-text" class="end-text"></div>
+      <button class="btn-comic" onclick="Game.restart()">YENİDEN OYNA</button>
+    </div>
+  </div>
+
+  <script src="story.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
