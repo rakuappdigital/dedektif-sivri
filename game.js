@@ -58,16 +58,14 @@ const Game = (() => {
     const artEl = document.getElementById("scene-art");
     artEl.innerHTML = scene.art;
 
-    // Hotspot nesneler
-    const objEl = document.getElementById("scene-objects");
-    objEl.innerHTML = "";
+    // Hotspot nesneler — doğrudan scene-art içine eklenir (SVG üstüne overlay)
     scene.hotspots.forEach(hs => {
       const div = document.createElement("div");
       div.className = "hotspot";
       div.style.cssText = hs.style;
       div.innerHTML = `<span class="hotspot-label">${hs.label}</span>`;
       div.addEventListener("click", () => handleHotspot(hs));
-      objEl.appendChild(div);
+      artEl.appendChild(div);
     });
 
     // Açıklama

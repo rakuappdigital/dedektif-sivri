@@ -124,7 +124,7 @@ body {
   background: var(--paper);
   min-height: 280px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
