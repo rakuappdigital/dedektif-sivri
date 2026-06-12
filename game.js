@@ -54,9 +54,9 @@ const Game = (() => {
     // Başlık
     document.getElementById("scene-name").textContent = scene.name;
 
-    // SVG sanat
+    // SVG sanat — innerHTML ile set et, hotspot'lar sonra eklenir
     const artEl = document.getElementById("scene-art");
-    artEl.innerHTML = scene.art;
+    artEl.innerHTML = scene.art.trim();
 
     // Hotspot nesneler — doğrudan scene-art içine eklenir (SVG üstüne overlay)
     scene.hotspots.forEach(hs => {

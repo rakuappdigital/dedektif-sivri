@@ -122,21 +122,20 @@ body {
 .scene-art {
   border: var(--border);
   background: var(--paper);
-  min-height: 280px;
   position: relative;
-  overflow: visible;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  /* Sabit yükseklik — hotspot % konumlandırması için şart */
+  height: 320px;
 }
 
-/* SVG sahneler için */
-.scene-art svg { width: 100%; height: 100%; }
-
-.scene-objects {
-  position: absolute;
-  inset: 0;
+/* SVG tam kap, ama tıklamaları bloklama */
+.scene-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
+.scene-art svg * { pointer-events: none; }
 
 .scene-description {
   background: var(--paper);
@@ -155,6 +154,8 @@ body {
   border-radius: 4px;
   transition: border-color .15s, background .15s;
   display: flex; align-items: flex-end; justify-content: center;
+  z-index: 10;
+  pointer-events: all;
 }
 .hotspot:hover {
   border-color: var(--red);
